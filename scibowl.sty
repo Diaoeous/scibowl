@@ -1,0 +1,92 @@
+\ProvidesPackage{scibowl}
+
+\newif\ifdiaotitling\diaotitlingtrue
+\DeclareOption{title}{\diaotitlingtrue}
+\DeclareOption{notitle}{\diaotitlingfalse}
+
+\ProcessOptions\relax
+
+%%fakesection \maketitle configuration
+
+%thanks evan
+\ifdiaotitling
+    %If we have titling...
+    \usepackage{titling}
+    \@ifundefined{KOMAClassName}{}{
+        \newcommand{\thesubtitle}{}
+        \renewcommand{\subtitle}[1]{%
+            \renewcommand{\thesubtitle}{#1}
+            \posttitle{\\ {\normalsize \thesubtitle} \end{center}\vspace{\posttitledrop}}
+        }
+    }
+    \newlength{\posttitledrop}
+    \setlength{\posttitledrop}{-0.7em}
+    \newlength{\postauthordrop}
+    \setlength{\postauthordrop}{-1.2em}
+    \pretitle{\begin{center}\bfseries \sffamily \Large}
+    \posttitle{\end{center}\vspace{\posttitledrop}}
+    \preauthor{\begin{center} \scshape}
+    \postauthor{\end{center}\vspace{\postauthordrop}}
+    \predate{\begin{center}\small}
+    \postdate{\end{center}}
+\fi
+
+%%fakesection Scibowl
+
+\usepackage{bold-extra}
+\usepackage{enumitem}
+\usepackage{import}
+
+\newcommand{\ii}{\item}
+
+\newcommand{\sci}[1]{\import{/Users/diaoeous/Documents/LaTeX/Problems/-Statement/-Scibowl/}{#1.tex}}
+
+\newcommand{\subj}[1]{%
+    {\scshape \bfseries #1}
+}
+\newcommand{\mult}{\textit{Multiple Choice}}
+\newcommand{\short}{\textit{Short Answer}}
+\newcommand{\ans}[1]{%
+    {\scshape \bfseries answer:}
+    {\scshape #1}
+}
+
+\newcommand{\hrulebar}{
+	\par\hspace{\fill}\rule{0.95\linewidth}{.7pt}\hspace{\fill}
+	\par\nointerlineskip \vspace{\baselineskip}
+}
+
+\newcounter{pnum}
+
+\newenvironment{nopb}
+  {\par\nobreak\vfil\penalty0\vfilneg
+   \vtop\bgroup}
+  {\par\xdef\tpd{\the\prevdepth}\egroup
+   \prevdepth=\tpd}
+
+
+\newcommand{\toss}[1]{%
+    \addtocounter{pnum}{1}
+    \begin{nopb}
+        \begin{center}
+            {\scshape \bfseries TOSS-UP}
+        \end{center}
+        \begin{enumerate}
+            \setcounter{enumi}{\thepnum}
+            \item \sci{#1}
+        \end{enumerate}
+    \end{nopb}
+}
+\newcommand{\bonus}[1]{%
+    \begin{nopb}
+        \begin{center}
+            {\scshape \bfseries BONUS}
+        \end{center}
+        \begin{enumerate}
+            \setcounter{enumi}{\thepnum}
+            \item \sci{#1}
+        \end{enumerate}
+        \hrulebar
+    \end{nopb}
+}
+
