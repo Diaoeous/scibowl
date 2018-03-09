@@ -3,7 +3,7 @@ This is a LaTeX-based problem manager for Scibowl created rounds.
 
 ## How does this work?
 
-Read the **Setup** section, which deals with about setting up `scibowl.sty` with your own problem directory. `scibowl.sty` assumes you have all question files in a single folder, which I'll call the problem database.
+Read the **Setup** section, which deals with setting up `scibowl.sty` with your own problem directory. `scibowl.sty` assumes you have all question files in a single folder, which I'll call the problem database.
 
 The rest is pretty user-friendly -- follow the samples! I've included the details below, though, for reference.
 
