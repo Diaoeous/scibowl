@@ -19,7 +19,7 @@ Read the **Setup** section, which deals with setting up `scibowl.sty` with your 
 The rest is pretty user-friendly -- follow the templates! I've included the details below, though, for reference.
 
 ### Setup
-First, go into `scibowl.sty` and change the definition of `\sci` to match your own problem database. Right now, the relevant line of code reads:
+First, go into `scibowl.sty` and change the definition of `\sci` to match your own problem database. Right now, the relevant line of code (line 42) reads:
 ```latex
 \newcommand{\sci}[1]{\import{/Users/diaoeous/Documents/LaTeX/Problems/-Statement/-Scibowl/}{#1.tex}}
 ```
@@ -35,6 +35,8 @@ Use the template [here](Templates/round-template.tex).
 When using `\toss` or `\bonus`, the argument is equal to the filename (without the extension). For instance, if I wanted to include the question named `biology-1.tex` *from my problem database* as a tossup, I would enter it as `\toss{biology-1}` in the LaTeX file.
 
 #### Short answer
+See [this](Templates/short-template.tex) for a short answer template.
+
 Short answer question files follow the following format:
 ```latex
 \subj{Subject}
@@ -43,9 +45,11 @@ Question text
 
 \ans{answer}
 ```
-Ideally there should be whitespace between `Question text` and `\ans{answer}` but no whitespace between `\short` and `Question text`. See [this](Templates/short-template.tex) for a short answer template.
+Ideally there should be whitespace between `Question text` and `\ans{answer}` but no whitespace between `\short` and `Question text`. 
 
 #### Multiple choice
+See [this](Templates/mult-template.tex) for a multiple choice template.
+
 Multiple choice question files follow the following format:
 ```latex
 \subj{Subject}
@@ -62,7 +66,7 @@ Question text
 
 \ans{y) answer choice Y}
 ```
-Ideally there should be whitespace between `\end{enumerate}` and `\ans{answer}` but no whitespace between `\mult` and `Question text`. See [this](Templates/mult-template.tex) for a multiple choice template.
+Ideally there should be whitespace between `\end{enumerate}` and `\ans{answer}` but no whitespace between `\mult` and `Question text`.
 
 ## Convenience
 
