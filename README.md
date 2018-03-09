@@ -55,4 +55,14 @@ Ideally there should be whitespace between `\end{enumerate}` and `\ans{answer}` 
 
 ## Convenience
 
-For reference, examples are located in the `Samples` folder in this project, and templates are located in the `Templates` folder.
+For reference, templates are located in the `Templates` folder of this project and examples are located in the `Samples` folder. For the lazy:
+
+### Templates
+[Round template](Templates/round-template.tex)
+[Multiple choice template](Templates/mult-template.tex)
+[Short answer template](Templates/short-template.tex)
+
+### Examples
+[Sample round](Samples/sample-round.tex)
+[Multiple choice example](Samples/mult-example.tex)
+[Short answer example](Samples/short-example.tex)
