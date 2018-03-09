@@ -63,6 +63,6 @@ For reference, templates are located in the `Templates` folder of this project a
 * [Short answer template](Templates/short-template.tex)
 
 ### Examples
-* [Sample round](Samples/sample-round.tex)
+* [Sample round](Samples/sample-round.tex) ([PDF output](Samples/sample-round.pdf))
 * [Multiple choice example](Samples/mult-example.tex)
 * [Short answer example](Samples/short-example.tex)
