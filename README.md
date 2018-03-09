@@ -43,13 +43,13 @@ Question text
 
 \begin{enumerate}[label={\scshape \alph*)}]
     \setcounter{enumii}{22}
-    \ii Answer choice W
-    \ii Answer choice X
-    \ii Answer choice Y
-    \ii Answer choice Z
+    \ii answer choice W
+    \ii answer choice X
+    \ii answer choice Y
+    \ii answer choice Z
 \end{enumerate}
 
-\ans{answer}
+\ans{y) answer choice Y}
 ```
 Ideally there should be whitespace between `\end{enumerate}` and `\ans{answer}` but no whitespace between `\mult` and `Question text`. See [this](Templates/mult-template.tex) for a multiple choice template.
 
