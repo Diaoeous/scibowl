@@ -5,7 +5,7 @@ This is a LaTeX-based problem manager for Scibowl created rounds.
 
 `scibowl.sty` is intended to make compiling Scibowl rounds more convenient through a few optimizations.
 * The main optimization is **storing problems in a single folder**.
-    * `scibowl.sty` operates under the assumption that a single folder (which I'll refer to as the **problem database**) contains all question files.
+    * `scibowl.sty` operates under the assumption that a single folder (which I'll refer to as the *problem database*) contains all question files.
     * This has a few benefits:
         * faster problem lookup
         * less text to handle in round compilation
