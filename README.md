@@ -3,9 +3,20 @@ This is a LaTeX-based problem manager for Scibowl created rounds.
 
 ## How does this work?
 
-Read the **Setup** section, which deals with setting up `scibowl.sty` with your own problem database. `scibowl.sty` assumes you have all question files in a single folder, which I'll refer to as the problem database.
+`scibowl.sty` is intended to make compiling Scibowl rounds more convenient through a few optimizations.
+* The main optimization is **storing problems in a single folder**.
+    * `scibowl.sty` operates under the assumption that a single folder (which I'll refer to as the **problem database**) contains all question files.
+    * This has a few benefits:
+        * faster problem lookup
+        * less text to handle in round compilation
+        * simplified inclusion in rounds
+* `scibowl.sty` **does the formatting for you**.
+    * No need for manually numbering problems, inserting horizontal separators, placing answers in all caps, etc. etc...
+    * All formatting is done for you by `scibowl.sty`. Just follow the templates!
 
-The rest is pretty user-friendly -- follow the samples! I've included the details below, though, for reference.
+Read the **Setup** section, which deals with setting up `scibowl.sty` with your own problem database.
+
+The rest is pretty user-friendly -- follow the templates! I've included the details below, though, for reference.
 
 ### Setup
 First, go into `scibowl.sty` and change the definition of `\sci` to match your own problem database. Right now, the relevant line of code reads:
@@ -16,7 +27,7 @@ Replace `/Users/diaoeous/Documents/LaTeX/Problems/-Statement/-Scibowl/` with the
 
 ### Formatting
 
-Advice: use the templates! They make life easier. Here's how the formatting is intended to work:
+Advice: **use the templates**! They make life easier. Here's how the formatting is intended to work:
 
 #### Rounds
 Use the template [here](Templates/round-template.tex).
