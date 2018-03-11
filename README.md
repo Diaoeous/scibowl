@@ -19,7 +19,7 @@ Read the **Setup** section, which deals with setting up `scibowl.sty` with your 
 The rest is pretty user-friendly -- follow the templates! I've included the details below, though, for reference.
 
 ### Setup
-First, go into `scibowl.sty` and change the definition of `\pdatabase` to match your own problem database. Right now, the relevant line of code (line 42) reads:
+First, go into `scibowl.sty` and change the definition of `\pdatabase` to match your own problem database. Right now, the relevant line of code reads:
 ```latex
 \newcommand{\pdatabase}{/Users/diaoeous/Documents/LaTeX/Problems/-Statement/-Scibowl/}
 ```
