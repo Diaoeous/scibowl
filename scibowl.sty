@@ -1,8 +1,12 @@
 \ProvidesPackage{scibowl}
 
 \newif\ifdiaotitling\diaotitlingtrue
+\newif\iffimport\fimporttrue
+
 \DeclareOption{title}{\diaotitlingtrue}
 \DeclareOption{notitle}{\diaotitlingfalse}
+\DeclareOption{folders}{\fimporttrue}
+\DeclareOption{nofolders}{\fimportfalse}
 
 \ProcessOptions\relax
 
@@ -39,8 +43,6 @@
 
 \newcommand{\ii}{\item}
 
-\newcommand{\sci}[1]{\import{/Users/diaoeous/Documents/LaTeX/Problems/-Statement/-Scibowl/}{#1.tex}}
-
 \newcommand{\subj}[1]{%
     {\scshape\bfseries #1}
 }
@@ -68,29 +70,59 @@
   {\par\xdef\tpd{\the\prevdepth}\egroup
    \prevdepth=\tpd}
 
+\newcommand{\pdatabase}{/Users/diaoeous/Documents/LaTeX/Problems/-Statement/-Scibowl/}
 
-\newcommand{\toss}[1]{%
-    \addtocounter{pnum}{1}
-    \begin{nopb}
-        \begin{center}
-            {\scshape \bfseries TOSS-UP}
-        \end{center}
-        \begin{enumerate}
-            \setcounter{enumi}{\thepnum}
-            \item \sci{#1}
-        \end{enumerate}
-    \end{nopb}
-}
-\newcommand{\bonus}[1]{%
-    \begin{nopb}
-        \begin{center}
-            {\scshape \bfseries BONUS}
-        \end{center}
-        \begin{enumerate}
-            \setcounter{enumi}{\thepnum}
-            \item \sci{#1}
-        \end{enumerate}
-        \hrulebar
-    \end{nopb}
-}
+\iffimport
+    \newcommand{\sci}[2]{\import{\pdatabase/#1/}{#2.tex}}
+    \newcommand{\toss}[2]{%
+        \addtocounter{pnum}{1}
+        \begin{nopb}
+            \begin{center}
+                {\scshape \bfseries TOSS-UP}
+            \end{center}
+            \begin{enumerate}
+                \setcounter{enumi}{\thepnum}
+                \item \sci{#1}{#2}
+            \end{enumerate}
+        \end{nopb}
+    }
+    \newcommand{\bonus}[2]{%
+        \begin{nopb}
+            \begin{center}
+                {\scshape \bfseries BONUS}
+            \end{center}
+            \begin{enumerate}
+                \setcounter{enumi}{\thepnum}
+                \item \sci{#1}{#2}
+            \end{enumerate}
+            \hrulebar
+        \end{nopb}
+    }
 
+\else
+    \newcommand{\sci}[1]{\import{\pdatabase}{#1.tex}}
+    \newcommand{\toss}[1]{%
+        \addtocounter{pnum}{1}
+        \begin{nopb}
+            \begin{center}
+                {\scshape \bfseries TOSS-UP}
+            \end{center}
+            \begin{enumerate}
+                \setcounter{enumi}{\thepnum}
+                \item \sci{#1}
+            \end{enumerate}
+        \end{nopb}
+    }
+    \newcommand{\bonus}[1]{%
+        \begin{nopb}
+            \begin{center}
+                {\scshape \bfseries BONUS}
+            \end{center}
+            \begin{enumerate}
+                \setcounter{enumi}{\thepnum}
+                \item \sci{#1}
+            \end{enumerate}
+            \hrulebar
+        \end{nopb}
+    }
+\fi
