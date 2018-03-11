@@ -19,9 +19,9 @@ Read the **Setup** section, which deals with setting up `scibowl.sty` with your 
 The rest is pretty user-friendly -- follow the templates! I've included the details below, though, for reference.
 
 ### Setup
-First, go into `scibowl.sty` and change the definition of `\sci` to match your own problem database. Right now, the relevant line of code (line 42) reads:
+First, go into `scibowl.sty` and change the definition of `\pdatabase` to match your own problem database. Right now, the relevant line of code (line 42) reads:
 ```latex
-\newcommand{\sci}[1]{\import{/Users/diaoeous/Documents/LaTeX/Problems/-Statement/-Scibowl/}{#1.tex}}
+\newcommand{\pdatabase}{/Users/diaoeous/Documents/LaTeX/Problems/-Statement/-Scibowl/}
 ```
 Replace `/Users/diaoeous/Documents/LaTeX/Problems/-Statement/-Scibowl/` with the directory of your problem database.
 
@@ -32,7 +32,14 @@ Advice: **use the templates**! They make life easier. Here's how the formatting 
 #### Rounds
 Use the template [here](Templates/round-template.tex).
 
-When using `\toss` or `\bonus`, the argument is equal to the filename (without the extension). For instance, if I wanted to include the question named `biology-1.tex` *from my problem database* as a tossup, I would enter it as `\toss{biology-1}` in the LaTeX file.
+`scibowl.sty` has two options: `folder` and `nofolder`. `folder` is the default option, which requires two parameters for `\toss` and `\bonus` and is used when importing problems from a folder *within* your problem database. If your problems are not enclosed in any folders within your problem databse, use `nofolder` instead with the line
+```latex
+\usepackage[nofolder]{scibowl}
+```
+
+**If using `folder`**: `\toss` and `\bonus` both require two parameters, the first of which is the enclosing folder name and the second of which is the file name. For instance, if I wanted to include the question named `1.tex` from folder `biology` as a tossup, I would enter it in as `\toss{biology}{1}`.
+
+**If using `nofolder`**: when using `\toss` or `\bonus`, the argument is equal to the filename (without the extension). For instance, if I wanted to include the question named `biology-1.tex` *directly from my problem database* as a tossup, I would enter it as `\toss{biology-1}` in the LaTeX file.
 
 #### Short answer
 See [this](Templates/short-template.tex) for a short answer template.
