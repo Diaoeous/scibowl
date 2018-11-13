@@ -32,7 +32,7 @@ Advice: **use the templates**! They make life easier. Here's how the formatting 
 #### Rounds
 Use the template [here](Templates/round-template.tex).
 
-`scibowl.sty` has two options: `folder` and `nofolder`. `folder` is the default option, which requires two parameters for `\toss` and `\bonus` and is used when importing problems from a folder *within* your problem database. If your problems are not enclosed in any folders within your problem databse, use `nofolder` instead with the line
+`scibowl.sty` has two options: `folder` and `nofolder`. `folder` is the default option, which requires two parameters for `\toss` and `\bonus` and is used when importing problems from a folder *within* your problem database. If your problems are not enclosed in any folders within your problem database, use `nofolder` instead with the line
 ```latex
 \usepackage[nofolder]{scibowl}
 ```
